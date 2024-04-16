@@ -33,7 +33,7 @@ export class NoiseService {
 
   async getPastNoise(room: number) {
     let now = new Date();
-    now.setHours(now.getHours() - 1);
+    now.setHours(now.getMinutes() - 10);
     const noise = await this.prisma.noise.findMany({
       where: {
         room,
