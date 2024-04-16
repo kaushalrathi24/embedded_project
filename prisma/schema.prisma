@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Temperature {
-  id Int @default(autoincrement()) @id
+  id Int  @default(autoincrement()) @id
   room Int
   temperature Float
   timestamp DateTime @default(now())
@@ -31,6 +31,13 @@ model Noise {
   id Int @default(autoincrement()) @id
   room Int
   noise Float
+  timestamp DateTime @default(now())
+}
+
+model flame {
+  id Int @default(autoincrement()) @id
+  room Int
+  safe Boolean
   timestamp DateTime @default(now())
 }
 
