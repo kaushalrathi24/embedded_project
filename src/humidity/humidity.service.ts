@@ -33,7 +33,7 @@ export class HumidityService {
 
   async getPastHumidity(room: number) {
     let now = new Date();
-    now.setHours(now.getMinutes() - 10);
+    now.setMinutes(now.getMinutes() - 10);
     const humidity = await this.prisma.humidity.findMany({
       where: {
         room,

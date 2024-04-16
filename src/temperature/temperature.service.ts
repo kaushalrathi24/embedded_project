@@ -33,7 +33,7 @@ export class TemperatureService {
 
   async getPastTemperature(room: number) {
     let now = new Date();
-    now.setHours(now.getMinutes() - 10);
+    now.setMinutes(now.getMinutes() - 10);
     const temperature = await this.prisma.temperature.findMany({
       where: {
         room,
